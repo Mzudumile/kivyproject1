@@ -115,9 +115,6 @@ fullscreen = 1
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
 
-android.accept_sdk_license = True
-android.skip_update = False
-
 # (bool) Use --private data storage (True) or --dir public storage (False)
 #android.private_storage = True
 
