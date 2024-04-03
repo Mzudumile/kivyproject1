@@ -18,6 +18,7 @@ jobs:
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
           sudo apt-get install -y sdkmanager
           yes | sdkmanager "platforms;android-31" "build-tools;31.0.0" "extras;android;m2repository"
+          yes | sdkmanager --licenses
       - uses: actions/checkout@v2
 
       # used to cache dependencies with a timeout
@@ -37,8 +38,6 @@ jobs:
         with:
           path: .buildozer
           key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('buildozer.spec') }}
-      - name: Accept all SDK licenses
-        run: yes | sdkmanager --licenses
       - name: Build with Buildozer
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
