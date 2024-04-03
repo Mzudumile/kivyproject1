@@ -1,0 +1,41 @@
+<container>
+    Left:
+        RoundedButton:
+            text:"left turn"
+            pos_hint:{'x': 0.2, 'y': 0.6}
+            size_hint:0.3, 0.3
+            on_press: root.leftTurn()  
+            on_release: root.stopSound() 
+
+        RoundedButton:
+            text:"forward"
+            pos_hint:{'x': 0.2, 'y': 0.2}
+            size_hint:0.3, 0.3
+            on_press: root.forward()  
+            on_release: root.stopSound() 
+    
+    Right:
+        RoundedButton:
+            text: "right turn"
+            pos_hint: {'x': 0.6, 'y': 0.6}
+            size_hint: 0.3, 0.3
+            on_press: root.rightTurn()
+            on_release: root.stopSound()
+
+        RoundedButton:
+            text: "stop"
+            pos_hint: {'x': 0.6, 'y': 0.2}
+            size_hint: 0.3, 0.3
+            on_press: root.stopCar()
+            on_release: root.stopSound()
+        
+<RoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (48/255,84/255,150/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [70]
