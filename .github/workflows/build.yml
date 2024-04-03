@@ -16,6 +16,7 @@ jobs:
           unzip -q android-sdk-tools.zip -d $HOME/android-sdk
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
+          sudo apt-get install -y sdkmanager
           yes | sdkmanager "platforms;android-31" "build-tools;31.0.0" "extras;android;m2repository" "extras;google;m2repository"
       - uses: actions/checkout@v2
 
